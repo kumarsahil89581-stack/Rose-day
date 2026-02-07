@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Rose Day – Sahish 🌹</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .card {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 22px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      max-width: 360px;
+      width: 90%;
+      text-align: center;
+      animation: pop 0.8s ease;
+      position: relative;
+    }
+    @keyframes pop {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    h1 {
+      color: #e63946;
+      margin: 10px 0 5px;
+      font-size: 28px;
+    }
+    h2 {
+      color: #ff6f91;
+      margin: 0 0 10px;
+      font-weight: 600;
+    }
+    .rose {
+      font-size: 90px;
+      animation: float 2.2s infinite ease-in-out;
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    p {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.5;
+      margin: 12px 0 18px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 22px;
+      background: #e63946;
+      color: #fff;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 6px 15px rgba(230,57,70,0.4);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(230,57,70,0.5);
+    }
+
+    /* Falling hearts */
+    .heart {
+      position: absolute;
+      top: -20px;
+      font-size: 18px;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="rose">🌹</div>
+    <h1>Happy Rose Day</h1>
+    <h2>to my ishipishii 💖</h2>
+    <p>
+      Ye rose sirf phool nahi…  
+      ye wo feeling hai jo tumhari ek smile se start hoti hai 😌💗
+    </p>
+    <a class="btn" href="https://wa.me/?text=Happy%20Rose%20Day%20Sahish%20🌹%0ATumhari%20ek%20smile%20meri%20poori%20day%20bright%20kar%20deti%20hai%20💗" target="_blank">
+      Send Love on WhatsApp 💌
+    </a>
+  </div>
+
+  <!-- Hearts Generator -->
+  <script>
+    const colors = ["💖","💗","💓","💘","💝"];
+    function createHeart(){
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = colors[Math.floor(Math.random()*colors.length)];
+      heart.style.left = Math.random()*100 + "vw";
+      heart.style.animationDuration = (3 + Math.random()*3) + "s";
+      heart.style.fontSize = (14 + Math.random()*16) + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 350);
+  </script>
+
+</body>
+</html>
